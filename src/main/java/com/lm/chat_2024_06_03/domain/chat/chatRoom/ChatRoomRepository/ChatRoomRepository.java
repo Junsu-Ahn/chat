@@ -1,15 +1,16 @@
 package com.lm.chat_2024_06_03.domain.chat.chatRoom.ChatRoomRepository;
 
 import com.lm.chat_2024_06_03.domain.chat.chatRoom.entity.ChatRoom;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Repository
-public class ChatRoomRepository {
+public interface ChatRoomRepository extends JpaRepository<ChatRoom, Long> {
+                                                        // entity, primary key
 
-    private long lastChatRoomId = 0;
+    // save, findAll 등의 기능이 모두 JpaRepository 에 정의되어있다.
+
+   /* private long lastChatRoomId = 0;
     private List<ChatRoom> chatRooms = new ArrayList<>();
 
     public ChatRoom save(ChatRoom chatRoom) {
@@ -21,5 +22,5 @@ public class ChatRoomRepository {
 
     public List<ChatRoom> findAll() {
         return chatRooms;
-    }
+    }*/
 }
